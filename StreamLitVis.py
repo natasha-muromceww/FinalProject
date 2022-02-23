@@ -28,7 +28,7 @@ st.title("Andover Compliment Page")
 for row in rows:
     st.table(rows)
     
-st.write("**Add your own comment:**")
+st.write("**Send a Compliment:**")
 form = st.form("comment")
 name = form.text_input("Name")
 comment = form.text_area("Comment")

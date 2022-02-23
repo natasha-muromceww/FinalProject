@@ -5,7 +5,7 @@ from gsheetsdb import connect
 
 # import time
 
-from shillelagh.backends.apsw.db import connect
+# from shillelagh.backends.apsw.db import connect
 
 # url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 

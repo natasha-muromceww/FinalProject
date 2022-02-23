@@ -10,10 +10,10 @@ rows1 = conn.execute(f'SELECT * FROM "{sheet_url}"')
 df1 = pd.DataFrame(rows1)
 st.write(df1)
 
-option = st.sidebar.selectbox('Select pet',df1.pet)
+option = st.sidebar.selectbox('Select pet',df1.rows1)
 df1.set_index("pet", inplace = True)
 result = df1.loc[[option]]
-st.write( result)
+st.write(result)
 
 
 # # Perform SQL query on the Google Sheet.

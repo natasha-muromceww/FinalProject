@@ -3,34 +3,35 @@ import pandas as pd
 import altair as alt
 # import time
 
-from shillelagh.backends.apsw.db import connect
+# from shillelagh.backends.apsw.db import connect
+
+# connection = connect(":memory:")
+# cursor = connection.cursor()
 
 
-connection = connect(":memory:")
-cursor = connection.cursor()
-
-
-query = """
-SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
-"""
-for row in cursor.execute(query):
-    st.write(row)
+# query = """
+# SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+# """
+# for row in cursor.execute(query):
+#     st.write(row)
    
-query = """
-UPDATE "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
-SET age = 10
-WHERE name == 'Chris'
-"""
+# query = """
+# UPDATE "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+# SET age = 10
+# WHERE name == 'Chris'
+# """
 
-# time.sleep(1)
+# # time.sleep(1)
 
-query = """
-SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
-"""
-for row in cursor.execute(query):
-    st.write(row)
+# query = """
+# SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+# """
+# for row in cursor.execute(query):
+#     st.write(row)
 
-
+data = {'recipient': ['Natasha'], 'compliment': ['Hii']}
+df = pd.DataFrame(data)
+st.write(df)
 
 #PAGE SET UP
 st.title("Andover Compliment Page")

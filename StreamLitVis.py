@@ -69,9 +69,9 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 
 
 
-# for line in df:
-#    send_compliment(df['b'], df['c'])
-#    st.write("hi)
+for line in df:
+   send_compliment(df['b'], df['c'])
+   st.write("hi)
 
                    
 #VISUALIZATIONS--------------------------------------------------------------

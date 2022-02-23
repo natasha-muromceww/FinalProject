@@ -43,3 +43,8 @@
 #     return rows
 
 # rows = run_query(f'SELECT * FROM "{sheet_url}"')
+
+# SELECT name, SUM(age)
+# FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+# WHERE age > 0
+# # GROUP BY country

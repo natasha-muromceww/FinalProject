@@ -43,12 +43,15 @@ query = """
 SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
 """
 
-data = {}
-df = pd.DataFrame(data)
-
 for row in cursor.execute(query):
-    df.append(row)
+    st.write(row)
 
-st.table(df)
+# data = {'a': [], 'b': [], 'c': []}
+# df = pd.DataFrame(data)
+
+# for row in cursor.execute(query):
+#     df.append(row)
+
+# st.table(df)
     
 

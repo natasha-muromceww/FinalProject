@@ -36,10 +36,10 @@ name = form.text_input("Name")
 comment = form.text_area("Comment")
 submit = form.form_submit_button("Add comment")
 
-if submit:
+# if submit:
     
-#         date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-   conn.insert(conn, [[name, comment, date]])
+# #         date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+#    conn.insert(conn, [[name, comment, date]])
 #         if "just_posted" not in st.session_state:
 #             st.session_state["just_posted"] = True
 #         st.experimental_rerun()

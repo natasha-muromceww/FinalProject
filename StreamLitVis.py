@@ -25,12 +25,12 @@ st.title("Andover Compliment Page")
 #     st.write(f"{row.name} has a :{row.pet}:")
 
 #THIS LITTLE SECTION WILL ACTUALLY SHOW SMTH
-for row in rows:
-    st.table(rows)
+# for row in rows:
+#     st.table(rows)
     
 st.write("**Send a Compliment:**")
 form = st.form("comment")
-name = form.text_input("Name")
+name = form.text_input("Compliment Recipient")
 comment = form.text_area("Comment")
 submit = form.form_submit_button("Add comment")
 

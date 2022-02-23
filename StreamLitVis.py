@@ -4,11 +4,11 @@ import altair as alt
 
 from shillelagh.backends.apsw.db import connect
 
-# google_sheet = "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+google_sheet = "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
 
 # Create a connection object.
 # conn = connect()
-sheet_url = st.secrets["public_gsheets_url"]
+# sheet_url = st.secrets["public_gsheets_url"]
 
 # connection = connect(":memory:")
 # cursor = connection.cursor()
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     SQL = """
     SELECT *
-    FROM sheet_url
+    FROM google_sheet
     """
     for row in cursor.execute(SQL):
         st.write(row)

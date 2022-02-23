@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from gsheetsdb import connect
 
 # Create a connection object.

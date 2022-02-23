@@ -11,13 +11,13 @@ connection = connect(":memory:")
 cursor = connection.cursor()
 
 # df1 = pd.DataFrame()
-# my_table
+my_table = st.table(df1)
 
 query = """
 SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
 """
 for row in cursor.execute(query):
-    st.table(row)
+    my_table.add_rows(row)
     
    
     

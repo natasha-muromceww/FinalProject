@@ -34,7 +34,7 @@ if __name__ == "__main__":
     FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
     """
     for row in cursor.execute(SQL):
-        print(row)
+        st.write(row)
 
 # SELECT name, SUM(age)
 # FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"

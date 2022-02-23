@@ -73,6 +73,7 @@ for x in df.index:
    send_compliment(df['b'], df['c'])
    st.write("hi")
 
+st.stop()
                    
 #VISUALIZATIONS--------------------------------------------------------------
 #worldcloud

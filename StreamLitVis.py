@@ -10,7 +10,7 @@ from shillelagh.backends.apsw.db import connect
 connection = connect(":memory:")
 cursor = connection.cursor()
 
-# df1 = pd.DataFrame()
+df1 = pd.DataFrame()
 my_table = st.table(df1)
 
 query = """

@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from gsheetsdb import connect
 
-from utils import chart, db
 
 # Create a connection object.
 conn = connect()
@@ -38,7 +37,7 @@ submit = form.form_submit_button("Add comment")
 
 if submit:
 #         date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-   db.insert(conn, [[name, comment, date]])
+   conn.insert(conn, [[name, comment, date]])
 #         if "just_posted" not in st.session_state:
 #             st.session_state["just_posted"] = True
 #         st.experimental_rerun()

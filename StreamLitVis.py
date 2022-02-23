@@ -44,5 +44,6 @@ submit = form.form_submit_button("Add comment")
 
 if submit:
    df.append({'recipient': recipient}, {'compliment': compliment})
+   st.write(df)
 
-st.write(df)
+

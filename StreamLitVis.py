@@ -6,9 +6,14 @@ from gsheetsdb import connect
 conn = connect()
 sheet_url = st.secrets["public_gsheets_url"]
 
-rows = conn.execute(f'SELECT * FROM "{sheet_url}"')
-df = pd.DataFrame(rows)
-st.write(df)
+rows1 = conn.execute(f'SELECT * FROM "{sheet_url}"')
+df1 = pd.DataFrame(rows)
+st.write(df1)
+
+option = st.sidebar.selectbox('Select pet',df1.pet)
+df1.set_index("pet", inplace = True)
+result = df1.loc[[option]]
+st.write( result)
 
 
 # # Perform SQL query on the Google Sheet.

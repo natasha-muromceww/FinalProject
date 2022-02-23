@@ -70,7 +70,7 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 
 
 for x in df.index:
-   send_compliment(df['b'], df['c'])
+   send_compliment(df['b'][x], df['c'][x])
    st.write("hi")
 
 st.stop()

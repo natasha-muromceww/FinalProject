@@ -51,13 +51,8 @@ for row in cursor.execute(query): #row is probs tuple
 
 df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd'])
 
+st.table(df)
 
-# data = {'a': [], 'b': [], 'c': []}
-# df = pd.DataFrame(data)
 
-# for row in cursor.execute(query):
-#     df.append(row)
-
-# st.table(df)
     
 

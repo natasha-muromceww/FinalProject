@@ -7,10 +7,27 @@ from googleapiclient.discovery import build
 import socket    
 socket.setdefaulttimeout(15 * 60)
 
+https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing
+
 SCOPE = "https://www.googleapis.com/auth/spreadsheets"
-SPREADSHEET_ID = "1rkMVLvh3JrBq_tbi4Ho0qjCDAP3vYdNuWOEjYpkJLNU"
+SPREADSHEET_ID = "1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco"
 SHEET_NAME = "Database"
 GSHEET_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
+
+# Create a connection object.
+conn = connect()
+sheet_url = st.secrets["public_gsheets_url"]
+
+#THIS IS FETCHING THE DATA FROM THE GOOGLE SHEET USING SQL QUERY
+# Perform SQL query on the Google Sheet.
+# Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    return rows
+
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
+
 
 
 @st.experimental_singleton()

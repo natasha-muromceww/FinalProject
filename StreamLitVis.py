@@ -17,10 +17,6 @@ def run_query(query):
 
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
-def append_answer(line):
-    rows1 = conn.
-
-
 
 # # THIS IS HOW I LEARNED HOW TO SHOW THE ROWS
 # for row in rows:

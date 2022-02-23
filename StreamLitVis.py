@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import time
 
 from shillelagh.backends.apsw.db import connect
 
@@ -20,6 +21,8 @@ UPDATE "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJe
 SET age = 10
 WHERE name == 'Chris'
 """
+
+time.sleep(1)
 
 query = """
 SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"

@@ -65,10 +65,12 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 # date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 #  if date < df.loc[i, 'a'] 
 
+send_compliment('ekelly22@andover.edu', 'i love you')
 
-for line in df:
-   send_compliment(df['b'], df['c'])
-   st.write("hi)
+
+# for line in df:
+#    send_compliment(df['b'], df['c'])
+#    st.write("hi)
 
                    
 #VISUALIZATIONS--------------------------------------------------------------

@@ -61,12 +61,13 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 
 #if new, send compliment use cache 
 # Uses st.cache to only rerun when the query changes or after 10 min.
-@st.cache(ttl=600)
-date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+# @st.cache(ttl=600)
+# date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+#  if date < df.loc[i, 'a'] 
 
-for i in range(df):
-   if date < df.loc[i, 'a'] 
-         send_compliment(df.loc[i, 'b'], df.loc[i, 'c'])
+
+for line in df.d:
+  send_compliment(df['b'], df['c'])
 
                    
 #VISUALIZATIONS--------------------------------------------------------------

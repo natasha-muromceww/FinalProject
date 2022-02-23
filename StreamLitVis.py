@@ -6,8 +6,8 @@ from datetime import datetime
 # from FinalProject import DataVisForm.png
 from PIL import Image
 
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+# import matplotlib.pyplot as plt
+# from wordcloud import WordCloud
 
 # from gsheetsdb import connect
 from shillelagh.backends.apsw.db import connect
@@ -39,18 +39,18 @@ st.table(df)
 
 #worldcloud
 
-# my_list=["one", "one two", "three three three"]
+# # my_list=["one", "one two", "three three three"]
 
 
-#convert list to string and generate
-unique_string=(" ").join(data)
-wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
-plt.figure(figsize=(15,8))
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.savefig("your_file_name"+".png", bbox_inches='tight')
-plt.show()
-plt.close()
+# #convert list to string and generate
+# unique_string=(" ").join(data)
+# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+# plt.figure(figsize=(15,8))
+# plt.imshow(wordcloud)
+# plt.axis("off")
+# plt.savefig("your_file_name"+".png", bbox_inches='tight')
+# plt.show()
+# plt.close()
 
     
 

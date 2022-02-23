@@ -36,7 +36,7 @@ chart = st.table(data)
 
 def add_row(recipient, compliment):
    new_row = {'recipient': [recipient], 'compliment': [compliment]}
-   chart.append(new_row)
+   chart.add_rows(new_row)
    return chart
 
 #PAGE SET UP

@@ -57,7 +57,7 @@ def send_compliment(new_receiver_email, new_message):
       server.login(sender_email, password)
       server.sendmail(sender_email, receiver_email, message)
    
-send_compliment('crhee24@andover.edu', 'i love you')
+# send_compliment('crhee24@andover.edu', 'i love you')
 
 send_compliment('nmuromcew22@andover.edu', 'i love you')
 
@@ -70,6 +70,7 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 
 
 for x in df.index:
+   st.write("hi1")
    send_compliment(df['b'][x], df['c'][x])
    st.write("hi")
 

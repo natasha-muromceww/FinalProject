@@ -17,8 +17,7 @@ for row in cursor.execute(query):
    
 query = """
 UPDATE "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
-INSERT age = 5
-WHERE name == 'Chris'
+INSERT ['Chris', 5]
 """
 
 query = """

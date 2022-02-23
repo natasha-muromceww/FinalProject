@@ -17,6 +17,8 @@ def run_query(query):
 
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
+#PAGE SET UP
+st.title("Andover Compliment Page")
 
 # # THIS IS HOW I LEARNED HOW TO SHOW THE ROWS
 # for row in rows:

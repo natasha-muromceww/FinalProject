@@ -13,3 +13,5 @@ shillelagh
 
 datetime
 
+matplotlib.pyplot
+wordcloud

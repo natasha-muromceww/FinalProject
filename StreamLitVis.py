@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import time
+# import time
 
 from shillelagh.backends.apsw.db import connect
 

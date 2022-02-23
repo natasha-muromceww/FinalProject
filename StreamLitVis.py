@@ -83,10 +83,6 @@ def send_compliment(new_receiver_email, new_message):
    receiver_email = new_receiver_email  # Enter receiver address
    password = "cs630final"
    message = new_message
-   Subject: Hi there
-
-   This message is sent from Python."""
-
    context = ssl.create_default_context()
    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
       server.login(sender_email, password)

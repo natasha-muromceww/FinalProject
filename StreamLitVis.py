@@ -44,10 +44,11 @@ SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtX
 """
 
 data = {}
+df = pd.DataFrame(data)
 
 for row in cursor.execute(query):
-    data.append(row)
+    df.append(row)
 
-st.table(data)
+st.table(df)
     
 

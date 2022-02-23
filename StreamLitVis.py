@@ -44,8 +44,7 @@ compliment = form.text_area("Compliment")
 submit = form.form_submit_button("Add comment")
 
 if submit:
-   for row in rows:
-      data1 = {'recipient': [recipient], 'compliment': [compliment]}
-      chart.add_rows(data1)
+   data1 = {'recipient': [recipient], 'compliment': [compliment]}
+   chart.add_rows(data1)
 
 

@@ -119,3 +119,11 @@
 
 
 #CODE NOTES: you left off trying to append enw data to the chart
+
+# data = {'a': [], 'b': [], 'c': []}
+# df = pd.DataFrame(data)
+
+# for row in cursor.execute(query):
+#     df.append(row)
+
+# st.table(df)

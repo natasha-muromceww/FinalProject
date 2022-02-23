@@ -20,13 +20,13 @@ def run_query(query):
     return row
 
 sheet_url = st.secrets["public_gsheets_url"]
-# rows = run_query(f'SELECT * FROM "{sheet_url}"')
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # # Print results.
 # for row in rows:
 #     st.table(rows)
 
-for i in range(5):
+for i in range(rows):
     new_row = run_query(f'SELECT * FROM "{sheet_url}"')
     st.table(new_row)
    

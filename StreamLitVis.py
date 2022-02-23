@@ -59,20 +59,17 @@ def send_compliment(new_receiver_email, new_message):
    
 # send_compliment('crhee24@andover.edu', 'i love you')
 
-send_compliment('nmuromcew22@andover.edu', 'i love you')
-
-#if new, send compliment use cache 
-# Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
-# date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-#  if date < df.loc[i, 'a'] 
+send_compliment('mdavis22@andover.edu', 'hi morgan u are amazing')
+send_compliment('kaziabor22@andover.edu', 'hi kris you are beautiful')
+send_compliment('cellis22@andover.edu', 'hi chenault you are beautiful')
+send_compliment('cdesaintphalle22@andover.edu', 'hi Claire you are beautiful')
 
 
-
-for x in df.index:
-   st.write("hi1")
-   send_compliment(df['b'][x], df['c'][x])
-   st.write("hi")
+#THIS WORKS 
+# for x in df.index:
+#    st.write("hi1")
+#    send_compliment(df['b'][x], df['c'][x])
+#    st.write("hi")
 
 st.stop()
                    

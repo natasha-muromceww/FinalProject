@@ -57,6 +57,8 @@ def send_compliment(new_receiver_email, new_message):
       server.login(sender_email, password)
       server.sendmail(sender_email, receiver_email, message)
    
+send_compliment('ekelly22@andover.edu', 'i love you')
+
 send_compliment('nmuromcew22@andover.edu', 'i love you')
 
 #if new, send compliment use cache 
@@ -65,7 +67,6 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 # date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 #  if date < df.loc[i, 'a'] 
 
-send_compliment('ekelly22@andover.edu', 'i love you')
 
 
 # for line in df:

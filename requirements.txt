@@ -6,6 +6,3 @@ shillelagh
 
 datetime
 
-smtplib
-ssl
-

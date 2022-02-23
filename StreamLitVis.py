@@ -34,6 +34,11 @@ chart = st.table(data)
 # df = pd.DataFrame(data)
 # st.write(df)
 
+def add_row(recipient, compliment):
+   new_row = {'recipient': [recipient], 'compliment': [compliment]}
+   chart.append(new_row)
+   return chart
+
 #PAGE SET UP
 st.title("Andover Compliment Page")
 
@@ -44,8 +49,12 @@ compliment = form.text_area("Compliment")
 submit = form.form_submit_button("Add comment")
 
 if submit:
+   add_row(recipient, compliment)
+   
+   
+   
 #    data1 = {'recipient': [recipient], 'compliment': [compliment]}
-   chart.add_rows({'recipient': [recipient], 'compliment': [compliment]})
+#    chart.add_rows({'recipient': [recipient], 'compliment': [compliment]})
 #    data1 = {'recipient': [recipient], 'compliment': [compliment]}
 #    chart.add_rows(data1)
 

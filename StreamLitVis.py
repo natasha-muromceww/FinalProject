@@ -4,6 +4,7 @@ import altair as alt
 # from gsheetsdb import connect
 from shillelagh.backends.apsw.db import connect
 
+#url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 
 #Page setup 
 st.title("Live Poll PA")
@@ -36,7 +37,7 @@ connection = connect(":memory:")
 cursor = connection.cursor()
 
 query = """
-SELECT * FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
 """
 for row in cursor.execute(query):
     st.write(row)

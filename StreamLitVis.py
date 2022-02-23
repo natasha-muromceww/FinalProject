@@ -49,7 +49,7 @@ for row in cursor.execute(query): #row is probs tuple
    data.append(row)
 #     st.write(row) #do the work in here 
 
-df = pd.DataFrame(data, columns=['a', 'b', 'c'])
+df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd'])
 
 
 # data = {'a': [], 'b': [], 'c': []}

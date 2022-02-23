@@ -71,7 +71,7 @@ send_compliment('cdesaintphalle22@andover.edu', 'hi Claire you are beautiful')
 #    send_compliment(df['b'][x], df['c'][x])
 #    st.write("hi")
 
-st.stop()
+# st.stop()
                    
 #VISUALIZATIONS--------------------------------------------------------------
 #worldcloud

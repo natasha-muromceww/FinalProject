@@ -2,12 +2,7 @@ streamlit
 pandas
 gsheetsdb==0.1.13.1
 
-altair
-vega-datasets
-google-api-python-client
-google-auth
-google-auth-httplib2
-protobuf
+
 
 shillelagh
 

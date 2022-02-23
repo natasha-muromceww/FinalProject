@@ -43,8 +43,8 @@ query = """
 SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
 """
 
-for row in cursor.execute(query):
-    st.write(row)
+for row in cursor.execute(query): #row is probs tuple 
+    st.write(row) #do the work in here 
 
 # data = {'a': [], 'b': [], 'c': []}
 # df = pd.DataFrame(data)

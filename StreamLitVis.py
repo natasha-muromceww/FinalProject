@@ -46,6 +46,6 @@ submit = form.form_submit_button("Add comment")
 if submit:
    data1 = {'recipient': [recipient], 'compliment': [compliment]}
    chart.add_rows(data1)
-   st.write(chart)
+#    st.write(chart)
 
 

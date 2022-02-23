@@ -3,6 +3,8 @@ import pandas as pd
 import altair as alt
 
 from datetime import datetime
+from FinalProject import DataVisForm.png
+from PIL import Image
 
 # from gsheetsdb import connect
 from shillelagh.backends.apsw.db import connect
@@ -11,6 +13,9 @@ from shillelagh.backends.apsw.db import connect
 
 #Page setup 
 st.title("Live Poll PA")
+
+image = Image.open('DataVisForm.png')
+st.image(image, caption='Google Form QR Code')
 
 
 # #GSHEETS VERSION

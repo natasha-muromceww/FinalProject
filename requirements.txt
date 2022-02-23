@@ -1,12 +1,11 @@
 streamlit
 pandas
 gsheetsdb==0.1.13.1
-
-
-
+altair
 shillelagh
 
 datetime
 
-smtplib, ssl
+smtplib
+ssl
 

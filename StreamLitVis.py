@@ -30,8 +30,9 @@ import altair as alt
 #     st.write(row)
 
 data = {'recipient': ['Natasha'], 'compliment': ['Hii']}
-df = pd.DataFrame(data)
-st.write(df)
+chart = st.table(data)
+# df = pd.DataFrame(data)
+# st.write(df)
 
 #PAGE SET UP
 st.title("Andover Compliment Page")
@@ -43,7 +44,8 @@ compliment = form.text_area("Compliment")
 submit = form.form_submit_button("Add comment")
 
 if submit:
-   df.append({'recipient': recipient}, {'compliment': compliment})
-   st.write(df)
+   data1 = {'recipient': [recipient], ['compliment': compliment]}
+   chart.add_rows(data1)
+   st.write(chart)
 
 

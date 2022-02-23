@@ -6,32 +6,31 @@ from gsheetsdb import connect
 conn = connect()
 sheet_url = st.secrets["public_gsheets_url"]
 
-rows1 = conn.execute(f'SELECT * FROM "{sheet_url}"')
-df1 = pd.DataFrame(rows1)
-st.write(df1)
+# rows1 = conn.execute(f'SELECT * FROM "{sheet_url}"')
+# df1 = pd.DataFrame(rows1)
+# st.write(df1)
 
-option = st.sidebar.selectbox('Select pet',df1.rows1)
-df1.set_index("pet", inplace = True)
-result = df1.loc[[option]]
-st.write(result)
+# option = st.sidebar.selectbox('Select pet',df1.rows1)
+# df1.set_index("pet", inplace = True)
+# result = df1.loc[[option]]
+# st.write(result)
 
 
-# # Perform SQL query on the Google Sheet.
-# # Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
-# def run_query(query):
-#     rows = conn.execute(query, headers=1)
-#     return rows
+# Perform SQL query on the Google Sheet.
+# Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    return rows
 
-# sheet_url = st.secrets["public_gsheets_url"]
-# rows = run_query(f'SELECT * FROM "{sheet_url}"')
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
-# # # Print results.
-# # for row in rows:
-# #     st.write(f"{row.name} has a :{row.pet}:")
-
+# # Print results.
 # for row in rows:
-#     st.table(rows)
+#     st.write(f"{row.name} has a :{row.pet}:")
+
+for row in rows:
+    st.table(rows)
     
 # st.write("**Add your own comment:**")
 #     form = st.form("comment")

@@ -14,3 +14,9 @@
 #THIS LITTLE SECTION WILL ACTUALLY SHOW SMTH
 # for row in rows:
 #     st.table(rows)
+
+# google_sheet = "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"
+
+# Create a connection object.
+# conn = connect()
+# sheet_url = st.secrets["public_gsheets_url"]

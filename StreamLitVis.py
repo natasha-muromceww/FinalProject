@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 
 from datetime import datetime
-from FinalProject import DataVisForm.png
+# from FinalProject import DataVisForm.png
 from PIL import Image
 
 # from gsheetsdb import connect

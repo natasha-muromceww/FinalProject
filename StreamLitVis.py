@@ -10,26 +10,24 @@ from shillelagh.backends.apsw.db import connect
 # conn = connect()
 sheet_url = st.secrets["public_gsheets_url"]
 
-connection = connect(":memory:")
-cursor = connection.cursor()
+# connection = connect(":memory:")
+# cursor = connection.cursor()
 
-query = "SELECT * FROM '{sheet_url}'"
-for row in cursor.execute(query):
-    st.write(row)
+# query = "SELECT * FROM '{sheet_url}'"
+# for row in cursor.execute(query):
+#     st.write(row)
    
-# def run_query(query): 
 
+if __name__ == "__main__":
+    connection = connect(":memory:")
+    cursor = connection.cursor()
 
-# if __name__ == "__main__":
-#     connection = connect(":memory:")
-#     cursor = connection.cursor()
-
-#     SQL = """
-#     SELECT *
-#     FROM sheet_url
-#     """
-#     for row in cursor.execute(SQL):
-#         st.write(row)
+    SQL = """
+    SELECT *
+    FROM sheet_url
+    """
+    for row in cursor.execute(SQL):
+        st.write(row)
 
 # SELECT name, SUM(age)
 # FROM "https://docs.google.com/spreadsheets/d/1v9jM22s_60OrW9O_fSHPQQa1VjV0MLJeg1rum9-UBco/edit?usp=sharing"

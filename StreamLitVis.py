@@ -66,7 +66,7 @@ send_compliment('nmuromcew22@andover.edu', 'i love you')
 #  if date < df.loc[i, 'a'] 
 
 
-for line in df.d:
+for line in df:
   send_compliment(df['b'], df['c'])
 
                    

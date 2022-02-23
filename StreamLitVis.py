@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import altair as alt
-import pydeck as pdk
+from gsheetsdb import connect
 
-st.write("Hello World")
+# Create a connection object.
+conn = connect()

@@ -149,3 +149,10 @@
 # for i in range(rows):
 #     new_row = run_query(f'SELECT * FROM "{sheet_url}"')
 #     st.table(new_row)
+
+# altair
+# vega-datasets
+# google-api-python-client
+# google-auth
+# google-auth-httplib2
+# protobuf

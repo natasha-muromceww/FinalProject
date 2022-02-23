@@ -7,7 +7,7 @@ conn = connect()
 sheet_url = st.secrets["public_gsheets_url"]
 
 rows1 = conn.execute(f'SELECT * FROM "{sheet_url}"')
-df1 = pd.DataFrame(rows)
+df1 = pd.DataFrame(rows1)
 st.write(df1)
 
 option = st.sidebar.selectbox('Select pet',df1.pet)

@@ -1,25 +1,41 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from gsheetsdb import connect
+
 # import time
 
 from shillelagh.backends.apsw.db import connect
 
 # url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 
-connection = connect(":memory:")
-cursor = connection.cursor()
+# connection = connect(":memory:")
+# cursor = connection.cursor()
 
-df1 = pd.DataFrame()
-my_table = st.table(df1)
+#Create a connection object.
+conn = connect()
+sheet_url = st.secrets["public_gsheets_url"]
 
-query = """
-SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
-"""
-for row in cursor.execute(query):
-    my_table.add_rows(row)
+# df1 = pd.DataFrame()
+# my_table = st.table(df1)
 
-st.write(my_table)
+# query = """
+# SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
+# """
+# for row in cursor.execute(query):
+#     my_table.add_rows(row)
+
+# st.write(my_table)
+
+#THIS IS FETCHING THE DATA FROM THE GOOGLE SHEET USING SQL QUERY
+# Perform SQL query on the Google Sheet.
+# Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    return rows
+
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
     
    
     

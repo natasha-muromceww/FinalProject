@@ -59,3 +59,4 @@ if submit:
 #    chart.add_rows(data1)
 
 
+#CODE NOTES: you left off trying to append enw data to the chart

@@ -12,9 +12,9 @@ from shillelagh.backends.apsw.db import connect
 # connection = connect(":memory:")
 # cursor = connection.cursor()
 
-#Create a connection object.
-conn = connect()
-sheet_url = st.secrets["public_gsheets_url"]
+# #Create a connection object.
+# conn = connect()
+# sheet_url = st.secrets["public_gsheets_url"]
 
 # df1 = pd.DataFrame()
 # my_table = st.table(df1)
@@ -27,7 +27,9 @@ sheet_url = st.secrets["public_gsheets_url"]
 
 # st.write(my_table)
 
-#THIS IS FETCHING THE DATA FROM THE GOOGLE SHEET USING SQL QUERY
+# Create a connection object.
+conn = connect()
+
 # Perform SQL query on the Google Sheet.
 # Uses st.cache to only rerun when the query changes or after 10 min.
 @st.cache(ttl=600)
@@ -35,8 +37,13 @@ def run_query(query):
     rows = conn.execute(query, headers=1)
     return rows
 
+sheet_url = st.secrets["public_gsheets_url"]
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
-    
+
+# Print results.
+for row in rows:
+    st.write(f"{row.name} has a :{row.pet}:")
+
    
     
     

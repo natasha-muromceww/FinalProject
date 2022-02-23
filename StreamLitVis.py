@@ -18,6 +18,8 @@ SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtX
 """
 for row in cursor.execute(query):
     my_table.add_rows(row)
+
+st.write(my_table)
     
    
     

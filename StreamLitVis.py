@@ -46,7 +46,7 @@ SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtX
 data = {}
 
 for row in cursor.execute(query):
-    data.add_rows(row)
+    data.append(row)
 
 st.table(data)
     

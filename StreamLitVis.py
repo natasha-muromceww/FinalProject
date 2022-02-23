@@ -17,7 +17,8 @@ def run_query(query):
 
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
-
+def append_answer(line):
+    rows1 = conn.
 
 
 
@@ -36,6 +37,7 @@ comment = form.text_area("Comment")
 submit = form.form_submit_button("Add comment")
 
 if submit:
+    
 #         date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
    conn.insert(conn, [[name, comment, date]])
 #         if "just_posted" not in st.session_state:

@@ -38,10 +38,11 @@ st.title("Andover Compliment Page")
 
 st.write("**Send a Compliment:**")
 form = st.form("comment")
-name = form.text_input("Compliment Recipient")
-comment = form.text_area("Comment")
+recipient = form.text_input("Compliment Recipient")
+compliment = form.text_area("Compliment")
 submit = form.form_submit_button("Add comment")
 
-# if submit:
-#    UPDATE sheet_url
-#    SET 
+if submit:
+   df.append({'recipient': recipient}, {'compliment': compliment})
+
+st.write(df)

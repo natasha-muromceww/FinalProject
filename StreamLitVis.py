@@ -59,10 +59,15 @@ def send_compliment(new_receiver_email, new_message):
    
 # send_compliment('crhee24@andover.edu', 'i love you')
 
-send_compliment('mdavis22@andover.edu', 'hi morgan u are amazing')
-send_compliment('kaziabor22@andover.edu', 'hi kris you are beautiful')
-send_compliment('cellis22@andover.edu', 'hi chenault you are beautiful')
-send_compliment('cdesaintphalle22@andover.edu', 'hi Claire you are beautiful')
+# send_compliment('mdavis22@andover.edu', 'hi morgan u are amazing')
+# send_compliment('kaziabor22@andover.edu', 'hi kris you are beautiful')
+# send_compliment('cellis22@andover.edu', 'hi chenault you are beautiful')
+# send_compliment('cdesaintphalle22@andover.edu', 'hi Claire you are beautiful')
+
+send_compliment('mmuromcew22@andover.edu', 'hi Mary you are beautiful')
+send_compliment('nmuromcew22@andover.edu', 'email check')
+
+
 
 
 #THIS WORKS 

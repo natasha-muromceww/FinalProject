@@ -61,7 +61,7 @@ def send_compliment(new_receiver_email, new_message):
 
 # Uses st.cache to only rerun when the query changes or after 10 min.
 @st.cache(ttl=600)
-datetime_object = datetime.datetime.now()
+now = datetime.now()
 ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
 cache_time = datetime_object - ten_minutes
 

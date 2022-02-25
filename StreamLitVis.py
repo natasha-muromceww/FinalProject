@@ -60,14 +60,14 @@ def send_compliment(new_receiver_email, new_message):
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
 # Uses st.cache to only rerun when the query changes or after 10 min.
-@st.cache(ttl=600)
+# @st.cache(ttl=600)
 run_datetime = datetime.now()
 ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
 cache_time = run_datetime - ten_minutes
 
-st.write("datetime_object")
-st.write("ten_minutes")
-st.write("cache_time")
+st.write(datetime_object)
+st.write(ten_minutes)
+st.write(cache_time)
 
 # for x in df.index:
 #    st.write("in loop")

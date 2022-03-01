@@ -8,3 +8,5 @@ datetime
 plotly
 numpy
 
+wordcloud
+matplotlib

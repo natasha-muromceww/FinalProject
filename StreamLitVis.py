@@ -155,6 +155,8 @@ unique_string=(" ").join(adjective_list)
 wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
 plt.figure(figsize=(15,8))
 # plt.imshow(wordcloud, interpolation='bilinear')
+plt.imshow(wordcloud)
+
 plt.axis("off")
 #plt.savefig("your_file_name"+".png", bbox_inches='tight')
 plt.show()

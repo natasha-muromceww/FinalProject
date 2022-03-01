@@ -204,7 +204,7 @@ with row2_3:
 row3_1, row3_2, row3_3 = st.columns((1,1, 1))
 
 with row3_1:
-    st.write("")
+    st.write(" .")
 
 with row3_2:
     st.write("**Third thing**")

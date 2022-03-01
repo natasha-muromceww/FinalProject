@@ -72,16 +72,16 @@ def send_compliment(new_receiver_email, new_message):
 #code check:
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
-#SENDING EMAILS-----------------------------------------------------------
-# Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
-the_datetime = datetime.now()
-# ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
-# cache_time = run_datetime - ten_minutes
+# #SENDING EMAILS-----------------------------------------------------------
+# # Uses st.cache to only rerun when the query changes or after 10 min.
+# # @st.cache(ttl=600)
+# the_datetime = datetime.now()
+# # ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
+# # cache_time = run_datetime - ten_minutes
 
-st.write(the_datetime)
-# st.write(ten_minutes)
-# st.write(cache_time)
+# st.write(the_datetime)
+# # st.write(ten_minutes)
+# # st.write(cache_time)
 
 
 # for x in df.index:
@@ -96,4 +96,60 @@ st.write(the_datetime)
 
 # st.stop()
                    
+#VISUALIZATIONS-----------------------------------------------------------
+# import plotly.graph_objects as go
+# import streamlit as st 
+# import numpy as np
+
+
+# desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
+# reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
+# color_list = []
+# size_list = []
+# text_list = []
+
+
+# for i in range(len(desire)):  
+#     color_list.append("rgb(252, " + str(-reception[i]/10 *(240-20) + 240) + ", 3)" )  
+#     size_list.append(50)
+#     text_list.append("desire rating: " + str(desire[i]) + " reception rating: " + str(reception[i]))
+
+# fig = go.Figure(data=[go.Scatter(
+#     x=desire, y=reception,
+#     text= text_list,
+#     mode='markers',
+#     marker=dict(
+#         color= color_list,
+#         size=size_list,
+#     )
+# )])
+
+# fig.update_layout(
+#     title='Compliment Scatterplot',
+#     xaxis=dict(
+#         title='Desire for Compliments',
+#     ),
+#     yaxis=dict(
+#         title='Reception of Compliments',
+#     ),
+#     paper_bgcolor='rgb(243, 243, 243)',
+#     plot_bgcolor='rgb(243, 243, 243)',
+# )
+
+# st.plotly_chart(fig, use_container_width=True)
+
+#VISUALIZATION LAYOUT-----------------------------------------------------------
+row2_1, row2_2, row2_3, row2_4 = st.columns((2,1,1,1))
+
+with row2_1:
+    st.write("first thing")
+
+with row2_2:
+    st.write("**Second thingt**")
+
+with row2_3:
+    st.write("**Third thing**")
+
+with row2_4:
+    st.write("**Fourth thing**")
 

@@ -185,10 +185,13 @@ fig.update_layout(
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1,1))
 
-compliment_list = df["b"].tolist()
+# compliment_list = df["b"].tolist()
+
 
 with row2_1:
-    st.write(compliment_list)    
+    st.write("View Recent Compliments")  
+    for x in df.index:
+        st.write(df['c'][x])
 
 with row2_2:
     st.write("**First thing**")

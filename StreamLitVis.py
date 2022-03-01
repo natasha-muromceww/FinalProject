@@ -51,7 +51,8 @@ for row in cursor.execute(query): #row is probs tuple
    data.append(row)
 
 df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd'])
-st.table(df)
+#code check:
+# st.table(df)
 
 
 #SENDING COMPLIMENT FUNCTION-----------------------------------------------------------

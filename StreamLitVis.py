@@ -12,10 +12,9 @@ import smtplib, ssl
 import plotly.graph_objects as go
 import numpy as np
 
-# import matplotlib.pyplot as plt
-# from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 
-# from gsheetsdb import connect
 from shillelagh.backends.apsw.db import connect
 
 #url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
@@ -101,7 +100,7 @@ def send_compliment(new_receiver_email, new_message):
 
 # st.stop()
                    
-#VISUALIZATIONS-----------------------------------------------------------
+#FIRST VISUALIZATION-----------------------------------------------------------
 # import plotly.graph_objects as go
 # import streamlit as st 
 # import numpy as np
@@ -140,8 +139,24 @@ fig.update_layout(
     paper_bgcolor='rgb(243, 243, 243)',
     plot_bgcolor='rgb(243, 243, 243)',
 )
-
+#Test code:
 # st.plotly_chart(fig, use_container_width=True)
+
+#WORD CLOUD/SECOND VISUALIZATION-------------
+# import matplotlib.pyplot as plt
+# from wordcloud import WordCloud
+#my_list=["one", "one two", "three three three"]
+
+adjective_list = df["d"].tolist()
+#convert list to string and generate
+unique_string=(" ").join(adjective_list)
+wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+plt.figure(figsize=(15,8))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+#plt.savefig("your_file_name"+".png", bbox_inches='tight')
+plt.show()
+st.pyplot()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2 = st.columns((1,1))
@@ -151,7 +166,7 @@ with row2_1:
     st.plotly_chart(fig, use_container_width=True)
 
 with row2_2:
-    st.write("**Second thingt**")
+    st.write("**Second thing**")
 
 row3_1, row3_2 = st.columns((1,1))
 with row3_1:

@@ -183,7 +183,7 @@ fig.update_layout(
 # fig.show()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
-row2_1, row2_2, row2_3 = st.columns((1,1))
+row2_1, row2_2, row2_3 = st.columns((1, 1,1))
 
 compliment_list = df["b"].tolist()
 

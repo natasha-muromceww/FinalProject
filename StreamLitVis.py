@@ -22,6 +22,8 @@ from shillelagh.backends.apsw.db import connect
 st.set_page_config(layout="wide")
 
 #Top section layout
+row1_1, row1_2 = st.columns((2,3))
+
 with row1_1:
     image = Image.open('DataVisForm.png')
     st.image(image, caption='Google Form QR Code')

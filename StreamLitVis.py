@@ -8,6 +8,10 @@ from PIL import Image
 #EMAIL IMPORT
 import smtplib, ssl
 
+#VISUALIZATIONS IMPORT
+import plotly.graph_objects as go
+import numpy as np
+
 # import matplotlib.pyplot as plt
 # from wordcloud import WordCloud
 
@@ -103,41 +107,41 @@ def send_compliment(new_receiver_email, new_message):
 # import numpy as np
 
 
-# desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
-# reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
-# color_list = []
-# size_list = []
-# text_list = []
+desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
+reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
+color_list = []
+size_list = []
+text_list = []
 
 
-# for i in range(len(desire)):  
-#     color_list.append("rgb(252, " + str(-reception[i]/10 *(240-20) + 240) + ", 3)" )  
-#     size_list.append(50)
-#     text_list.append("desire rating: " + str(desire[i]) + " reception rating: " + str(reception[i]))
+for i in range(len(desire)):  
+    color_list.append("rgb(252, " + str(-reception[i]/10 *(240-20) + 240) + ", 3)" )  
+    size_list.append(50)
+    text_list.append("desire rating: " + str(desire[i]) + " reception rating: " + str(reception[i]))
 
-# fig = go.Figure(data=[go.Scatter(
-#     x=desire, y=reception,
-#     text= text_list,
-#     mode='markers',
-#     marker=dict(
-#         color= color_list,
-#         size=size_list,
-#     )
-# )])
+fig = go.Figure(data=[go.Scatter(
+    x=desire, y=reception,
+    text= text_list,
+    mode='markers',
+    marker=dict(
+        color= color_list,
+        size=size_list,
+    )
+)])
 
-# fig.update_layout(
-#     title='Compliment Scatterplot',
-#     xaxis=dict(
-#         title='Desire for Compliments',
-#     ),
-#     yaxis=dict(
-#         title='Reception of Compliments',
-#     ),
-#     paper_bgcolor='rgb(243, 243, 243)',
-#     plot_bgcolor='rgb(243, 243, 243)',
-# )
+fig.update_layout(
+    title='Compliment Scatterplot',
+    xaxis=dict(
+        title='Desire for Compliments',
+    ),
+    yaxis=dict(
+        title='Reception of Compliments',
+    ),
+    paper_bgcolor='rgb(243, 243, 243)',
+    plot_bgcolor='rgb(243, 243, 243)',
+)
 
-# st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True)
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2 = st.columns((1,1))

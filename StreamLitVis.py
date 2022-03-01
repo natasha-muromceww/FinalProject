@@ -139,7 +139,7 @@ def send_compliment(new_receiver_email, new_message):
 # st.plotly_chart(fig, use_container_width=True)
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
-row2_1, row2_2, row2_3, row2_4 = st.columns((1,1))
+row2_1, row2_2 = st.columns((1,1))
 
 with row2_1:
     st.write("**First thing**")

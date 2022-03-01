@@ -157,7 +157,8 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 #plt.savefig("your_file_name"+".png", bbox_inches='tight')
 plt.show()
-st.pyplot()
+#code test:
+# st.pyplot()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2 = st.columns((1,1))
@@ -167,7 +168,8 @@ with row2_1:
     st.plotly_chart(fig, use_container_width=True)
 
 with row2_2:
-    st.write("**Second thing**")
+    st.write("**Word Cloud**")
+    st.pyplot()
 
 row3_1, row3_2 = st.columns((1,1))
 with row3_1:

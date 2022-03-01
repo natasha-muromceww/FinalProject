@@ -3,12 +3,10 @@ import pandas as pd
 import altair as alt
 
 from datetime import datetime
-# from FinalProject import DataVisForm.png
 from PIL import Image
 
 #EMAIL IMPORT
 import smtplib, ssl
-
 
 # import matplotlib.pyplot as plt
 # from wordcloud import WordCloud
@@ -77,11 +75,11 @@ def send_compliment(new_receiver_email, new_message):
 #SENDING EMAILS-----------------------------------------------------------
 # Uses st.cache to only rerun when the query changes or after 10 min.
 @st.cache(ttl=600)
-run_datetime = datetime.now()
+the_datetime = datetime.now()
 # ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
 # cache_time = run_datetime - ten_minutes
 
-st.write(datetime_object)
+st.write(the_datetime)
 # st.write(ten_minutes)
 # st.write(cache_time)
 

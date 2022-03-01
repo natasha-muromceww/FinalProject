@@ -106,19 +106,21 @@ def send_compliment(new_receiver_email, new_message):
 # import numpy as np
 
 
-desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
-reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
+# desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
+# reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
 color_list = []
 size_list = []
 text_list = []
 
+# for x in df.index:
+#    (df['f'][x])
 
-for i in range(len(desire)):  
-    color_list.append("rgb(252, " + str(-reception[i]/10 *(240-20) + 240) + ", 3)" )  
+for x in df.index:
+    color_list.append("rgb(252, " + str(-df['g'][x]/10 *(240-20) + 240) + ", 3)" )  
     size_list.append(50)
-    text_list.append("desire rating: " + str(desire[i]) + " reception rating: " + str(reception[i]))
-
-fig = go.Figure(data=[go.Scatter(
+    text_list.append("desire rating: " + str(df['f'][x]) + " reception rating: " + str(df['g'][x]))
+    
+fig1 = go.Figure(data=[go.Scatter(
     x=desire, y=reception,
     text= text_list,
     mode='markers',
@@ -128,7 +130,7 @@ fig = go.Figure(data=[go.Scatter(
     )
 )])
 
-fig.update_layout(
+fig1.update_layout(
     title='Compliment Scatterplot',
     xaxis=dict(
         title='Desire for Compliments',
@@ -195,7 +197,7 @@ with row2_1:
 
 with row2_2:
     st.write("**First thing**")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig1, use_container_width=True)
     
 with row2_3:
     st.write("**Word Cloud**")

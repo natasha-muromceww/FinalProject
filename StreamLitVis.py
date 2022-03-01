@@ -143,25 +143,25 @@ fig1.update_layout(
 #Test code:
 # st.plotly_chart(fig, use_container_width=True)
 
-#WORD CLOUD/SECOND VISUALIZATION-------------
-# import matplotlib.pyplot as plt
-# from wordcloud import WordCloud
-#my_list=["one", "one two", "three three three"]
-st.set_option('deprecation.showPyplotGlobalUse', False)
+# #WORD CLOUD/SECOND VISUALIZATION-------------
+# # import matplotlib.pyplot as plt
+# # from wordcloud import WordCloud
+# #my_list=["one", "one two", "three three three"]
+# st.set_option('deprecation.showPyplotGlobalUse', False)
 
-adjective_list = df["d"].tolist()
-#convert list to string and generate
-unique_string=(" ").join(adjective_list)
-wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
-plt.figure(figsize=(15,8))
-# plt.imshow(wordcloud, interpolation='bilinear')
-plt.imshow(wordcloud)
+# adjective_list = df["d"].tolist()
+# #convert list to string and generate
+# unique_string=(" ").join(adjective_list)
+# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+# plt.figure(figsize=(15,8))
+# # plt.imshow(wordcloud, interpolation='bilinear')
+# plt.imshow(wordcloud)
 
-plt.axis("off")
-#plt.savefig("your_file_name"+".png", bbox_inches='tight')
-plt.show()
-#code test:
-# st.pyplot()
+# plt.axis("off")
+# #plt.savefig("your_file_name"+".png", bbox_inches='tight')
+# plt.show()
+# #code test:
+# # st.pyplot()
 
 #THIRD VISUALIZATION-----------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]

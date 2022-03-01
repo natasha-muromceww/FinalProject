@@ -5,6 +5,6 @@ altair
 shillelagh
 
 datetime
-plotly.graph_objects
+plotly
 numpy
 

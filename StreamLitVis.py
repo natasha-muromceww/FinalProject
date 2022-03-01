@@ -183,13 +183,18 @@ fig.update_layout(
 # fig.show()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
-row2_1, row2_2 = st.columns((1,1))
+row2_1, row2_2, row2_3 = st.columns((1,1))
+
+compliment_list = df["b"].tolist()
 
 with row2_1:
-    st.write("**First thing**")
-    st.plotly_chart(fig, use_container_width=True)
+    st.write(compliment_list)    
 
 with row2_2:
+    st.write("**First thing**")
+    st.plotly_chart(fig, use_container_width=True)
+    
+with row2_3:
     st.write("**Word Cloud**")
     st.pyplot()
 

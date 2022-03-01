@@ -104,24 +104,22 @@ def send_compliment(new_receiver_email, new_message):
 # import plotly.graph_objects as go
 # import streamlit as st 
 # import numpy as np
+# compliment_list = df["b"].tolist()
 
 
-# desire = [1, 2, 3, 4, 8, 1, 4, 5, 6, 1]
-# reception = [1, 2, 3, 4, 2, 9 , 3, 2 , 4, 5]
+desire = df['f'].tolist()
+reception = df['g'].tolist()
 color_list = []
 size_list = []
 text_list = []
 
-# for x in df.index:
-#    (df['f'][x])
-
-for x in df.index:
-    color_list.append("rgb(252, " + str(-df['g'][x]/10 *(240-20) + 240) + ", 3)" )  
+for i in range(len(desire)):  
+    color_list.append("rgb(252, " + str(-reception[i]/10 *(240-20) + 240) + ", 3)" )  
     size_list.append(50)
-    text_list.append("desire rating: " + str(df['f'][x]) + " reception rating: " + str(df['g'][x]))
-    
+    text_list.append("desire rating: " + str(desire[i]) + " reception rating: " + str(reception[i]))
+
 fig1 = go.Figure(data=[go.Scatter(
-    x=df['f'][x], y=df['g'][x],
+    x=desire, y=reception,
     text= text_list,
     mode='markers',
     marker=dict(
@@ -141,6 +139,7 @@ fig1.update_layout(
     paper_bgcolor='rgb(243, 243, 243)',
     plot_bgcolor='rgb(243, 243, 243)',
 )
+
 #Test code:
 # st.plotly_chart(fig, use_container_width=True)
 

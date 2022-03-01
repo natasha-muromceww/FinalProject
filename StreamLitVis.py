@@ -19,10 +19,23 @@ from shillelagh.backends.apsw.db import connect
 #url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 
 #Page setup-----------------------------------------------------------
-st.title("Live Poll PA")
+st.set_page_config(layout="wide")
 
-image = Image.open('DataVisForm.png')
-st.image(image, caption='Google Form QR Code')
+#Top section layout
+with row1_1:
+    image = Image.open('DataVisForm.png')
+    st.image(image, caption='Google Form QR Code')
+
+with row1_2:
+    st.title("Live Poll PA")
+    st.write(
+    """
+    ##
+    Fill out this survey to send compliments to your friends. 
+    The compliments and additional data are visualized down below. 
+    """)
+
+
    
 #SHILLELAGH VERSION GRABBING DATA FROM SHEET -----------------------------------------------------
 connection = connect(":memory:")

@@ -141,13 +141,14 @@ fig.update_layout(
     plot_bgcolor='rgb(243, 243, 243)',
 )
 
-st.plotly_chart(fig, use_container_width=True)
+# st.plotly_chart(fig, use_container_width=True)
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2 = st.columns((1,1))
 
 with row2_1:
     st.write("**First thing**")
+    st.plotly_chart(fig, use_container_width=True)
 
 with row2_2:
     st.write("**Second thingt**")

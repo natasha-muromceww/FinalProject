@@ -163,27 +163,27 @@ fig1.update_layout(
 # #code test:
 # # st.pyplot()
 
-#THIRD VISUALIZATION-----------------------------------------------------------
-compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
-counts = [1, 2, 3, 4, 5, 6, 7]
+# #THIRD VISUALIZATION-----------------------------------------------------------
+# compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
+# counts = df['f'].tolist()
 
 
-fig = go.Figure([go.Bar(x = compliment_categories, y = counts)])
+# fig = go.Figure([go.Bar(x = compliment_categories, y = counts)])
 
 
-fig.update_layout(
-    title='Compliments by Category',
-    xaxis=dict(
-        title='Compliment Types',
-    ),
-    yaxis=dict(
-        title='Count',
-    ),
-    paper_bgcolor='rgb(242, 236, 218)',
-    plot_bgcolor='rgb(232, 208, 137)',
-)
-#test code: 
-# fig.show()
+# fig.update_layout(
+#     title='Compliments by Category',
+#     xaxis=dict(
+#         title='Compliment Types',
+#     ),
+#     yaxis=dict(
+#         title='Count',
+#     ),
+#     paper_bgcolor='rgb(242, 236, 218)',
+#     plot_bgcolor='rgb(232, 208, 137)',
+# )
+# #test code: 
+# # fig.show()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1,1))

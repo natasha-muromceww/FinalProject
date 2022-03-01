@@ -121,7 +121,7 @@ for x in df.index:
     text_list.append("desire rating: " + str(df['f'][x]) + " reception rating: " + str(df['g'][x]))
     
 fig1 = go.Figure(data=[go.Scatter(
-    x=desire, y=reception,
+    x=df['f'][x], y=df['g'][x],
     text= text_list,
     mode='markers',
     marker=dict(

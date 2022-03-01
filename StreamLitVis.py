@@ -160,6 +160,28 @@ plt.show()
 #code test:
 # st.pyplot()
 
+#THIRD VISUALIZATION-----------------------------------------------------------
+compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
+counts = [1, 2, 3, 4, 5, 6, 7]
+
+
+fig = go.Figure([go.Bar(x = compliment_categories, y = counts)])
+
+
+fig.update_layout(
+    title='Compliments by Category',
+    xaxis=dict(
+        title='Compliment Types',
+    ),
+    yaxis=dict(
+        title='Count',
+    ),
+    paper_bgcolor='rgb(242, 236, 218)',
+    plot_bgcolor='rgb(232, 208, 137)',
+)
+#test code: 
+# fig.show()
+
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2 = st.columns((1,1))
 
@@ -172,8 +194,10 @@ with row2_2:
     st.pyplot()
 
 row3_1, row3_2 = st.columns((1,1))
+
 with row3_1:
     st.write("**Third thing**")
+    fig.show()
 
 with row3_2:
     st.write("**Fourth thing**")

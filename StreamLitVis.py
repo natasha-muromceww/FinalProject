@@ -37,7 +37,6 @@ with row1_2:
     The compliments and additional data are visualized down below. 
     """)
 
-
    
 #SHILLELAGH VERSION GRABBING DATA FROM SHEET -----------------------------------------------------
 connection = connect(":memory:")
@@ -57,8 +56,8 @@ df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd'])
 st.table(df)
 
 
-#SENDING COMPLIMENT-----------------------------------------------------------
-# import smtplib, ssl
+#SENDING COMPLIMENT FUNCTION-----------------------------------------------------------
+# using import smtplib, ssl
    
 def send_compliment(new_receiver_email, new_message):
    port = 465  # For SSL
@@ -71,24 +70,27 @@ def send_compliment(new_receiver_email, new_message):
    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
       server.login(sender_email, password)
       server.sendmail(sender_email, receiver_email, message)
-   
+  
+#code check:
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
+#SENDING EMAILS-----------------------------------------------------------
 # Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
+@st.cache(ttl=600)
 run_datetime = datetime.now()
-ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
-cache_time = run_datetime - ten_minutes
+# ten_minutes = datetime(0, 0, 0, 0, 10, 0, 0)
+# cache_time = run_datetime - ten_minutes
 
 st.write(datetime_object)
-st.write(ten_minutes)
-st.write(cache_time)
+# st.write(ten_minutes)
+# st.write(cache_time)
+
 
 # for x in df.index:
 #    st.write("in loop")
 #    if df['a'][x] > 
 
-#THIS WORKS 
+#THIS WORKS FOR SENDING COMPLIMENTS IN A LOOP AND ACESSIGN PARTS IN A LOOP 
 # for x in df.index:
 #    st.write("hi1")
 #    send_compliment(df['b'][x], df['c'][x])

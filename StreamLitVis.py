@@ -146,6 +146,7 @@ fig.update_layout(
 # import matplotlib.pyplot as plt
 # from wordcloud import WordCloud
 #my_list=["one", "one two", "three three three"]
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 adjective_list = df["d"].tolist()
 #convert list to string and generate

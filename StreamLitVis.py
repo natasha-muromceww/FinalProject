@@ -53,7 +53,7 @@ data = []
 for row in cursor.execute(query): #row is probs tuple 
    data.append(row)
 
-df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd'])
+df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g'])
 #code check:
 # st.table(df)
 

@@ -198,12 +198,15 @@ with row2_3:
     st.write("**Word Cloud**")
     st.pyplot()
 
-row3_1, row3_2 = st.columns((1,1))
+row3_1, row3_2, row3_3 = st.columns((1,1, 1))
 
 with row3_1:
-    st.write("**Third thing**")
-    fig.show()
+    st.write("")
 
 with row3_2:
+    st.write("**Third thing**")
+    fig.show()
+ 
+with row3_3:
     st.write("**Fourth thing**")
 

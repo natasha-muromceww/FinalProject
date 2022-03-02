@@ -168,10 +168,10 @@ compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Cha
 # counts = df['f'].tolist()
 counts = [1, 2, 3, 4, 5, 6, 7]
 
-fig = go.Figure([go.Bar(x = compliment_categories, y = counts)])
+fig2 = go.Figure([go.Bar(x = compliment_categories, y = counts)])
 
 
-fig.update_layout(
+fig2.update_layout(
     title='Compliments by Category',
     xaxis=dict(
         title='Compliment Types',
@@ -183,7 +183,7 @@ fig.update_layout(
     plot_bgcolor='rgb(232, 208, 137)',
 )
 # #test code: 
-# # fig.show()
+# fig.show()
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1,1))
@@ -211,8 +211,8 @@ with row3_1:
 
 with row3_2:
     st.write("**Third thing**")
-    fig.show()
-#     st.plotly_chart(fig2, use_container_width=True)
+    fig2.show()
+    st.plotly_chart(fig2, use_container_width=True)
 
  
 with row3_3:

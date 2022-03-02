@@ -211,7 +211,7 @@ with row3_1:
 
 with row3_2:
     st.write("**Third thing**")
-# #     fig.show()
+    fig.show()
 #     st.plotly_chart(fig2, use_container_width=True)
 
  

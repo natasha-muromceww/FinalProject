@@ -166,7 +166,7 @@ plt.show()
 #THIRD VISUALIZATION-----------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
 # counts = df['f'].tolist()
-
+counts = [1, 2, 3, 4, 5, 6, 7]
 
 fig = go.Figure([go.Bar(x = compliment_categories, y = counts)])
 

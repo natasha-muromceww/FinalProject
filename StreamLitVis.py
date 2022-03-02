@@ -147,23 +147,23 @@ fig1.update_layout(
 # # import matplotlib.pyplot as plt
 # # from wordcloud import WordCloud
 # #my_list=["one", "one two", "three three three"]
-# st.set_option('deprecation.showPyplotGlobalUse', False)
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# adjective_list = df["d"].tolist()
-# #convert list to string and generate
-# unique_string=(" ").join(adjective_list)
-# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
-# plt.figure(figsize=(15,8))
-# # plt.imshow(wordcloud, interpolation='bilinear')
-# plt.imshow(wordcloud)
+adjective_list = df["d"].tolist()
+#convert list to string and generate
+unique_string=(" ").join(adjective_list)
+wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+plt.figure(figsize=(15,8))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.imshow(wordcloud)
 
-# plt.axis("off")
-# #plt.savefig("your_file_name"+".png", bbox_inches='tight')
-# plt.show()
+plt.axis("off")
+#plt.savefig("your_file_name"+".png", bbox_inches='tight')
+plt.show()
 # #code test:
 # # st.pyplot()
 
-# #THIRD VISUALIZATION-----------------------------------------------------------
+#THIRD VISUALIZATION-----------------------------------------------------------
 # compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
 # counts = df['f'].tolist()
 
@@ -211,7 +211,9 @@ with row3_1:
 
 with row3_2:
     st.write("**Third thing**")
-    fig.show()
+# #     fig.show()
+#     st.plotly_chart(fig2, use_container_width=True)
+
  
 with row3_3:
     st.write("**Fourth thing**")

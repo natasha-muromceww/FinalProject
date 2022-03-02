@@ -164,11 +164,32 @@ plt.show()
 # # st.pyplot()
 
 #THIRD VISUALIZATION-----------------------------------------------------------
-compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
-# counts = df['f'].tolist()
-counts = [1, 2, 3, 4, 5, 6, 7]
+# compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
+# # counts = df['f'].tolist()
+# counts = [1, 2, 3, 4, 5, 6, 7]
 
-fig2 = go.Figure([go.Bar(x = compliment_categories, y = counts)])
+compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
+compliment_input = df['e'].tolist()
+count_list = [0*7]
+
+
+for answer in compliment_input:
+    if answer == "Humor":  
+        count_list[0] = count_list[0] + 1 
+    if answer == "Intelligence":
+        count_list[1] = count_list[1] + 1 
+    if answer == "Athleticism":  
+        count_list[2] = count_list[2] + 1 
+    if answer == "Fashion":
+        count_list[3] = count_list[3] + 1
+    if answer == "Character":  
+        count_list[4] = count_list[4] + 1 
+    if answer == "Creativity":
+        count_list[5] = count_list[5] + 1
+    if answer == "Other":  
+        count_list[6] = count_list[6] + 1 
+
+fig2 = go.Figure([go.Bar(x = compliment_categories, y = count_list)])
 
 
 fig2.update_layout(

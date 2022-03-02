@@ -170,7 +170,7 @@ plt.show()
 
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
 compliment_input = df['e'].tolist()
-count_list = [0*7]
+count_list = [0]*7
 
 
 for answer in compliment_input:

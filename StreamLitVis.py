@@ -196,20 +196,20 @@ fig3.update_layout(
 # fig3.show()
 
 #FOURTH VISUALIZATION
-labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
-time_length = [3, 4, 5, 6] #NEEDS TO COME FROM CHART VALUES
+# labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
+# time_length = [3, 4, 5, 6] #NEEDS TO COME FROM CHART VALUES
 
-# Use `hole` to create a donut-like pie chart
-fig4 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
+# # Use `hole` to create a donut-like pie chart
+# fig4 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
 
-fig4.update_layout(
-    title='How Long Have You Known This Friend?',
-    paper_bgcolor='rgb(242, 236, 218)',
-    plot_bgcolor='rgb(232, 208, 137)',
-)
+# fig4.update_layout(
+#     title='How Long Have You Known This Friend?',
+#     paper_bgcolor='rgb(242, 236, 218)',
+#     plot_bgcolor='rgb(232, 208, 137)',
+# )
 
-#Test code:
-# fig4.show()
+# #Test code:
+# # fig4.show()
 
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
@@ -228,7 +228,7 @@ with row2_2:
     st.plotly_chart(fig1, use_container_width=True)
     
 with row2_3:
-    st.write("**Word Cloud**")
+    st.write("**Pie Chart**")
 #     fig2.show()
     st.plotly_chart(fig2, use_container_width=True)
 
@@ -243,10 +243,10 @@ with row3_2:
 #     fig3.show()
     st.plotly_chart(fig3, use_container_width=True)
 
-with row3_3:
-    st.write("**Pie Chart**")
-#     fig4.show()
-    st.plotly_chart(fig4, use_container_width=True)
+# with row3_3:
+#     st.write("**Pie Chart**")
+# #     fig4.show()
+#     st.plotly_chart(fig4, use_container_width=True)
 
  
 # #SENDING EMAILS-----------------------------------------------------------

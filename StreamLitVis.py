@@ -239,7 +239,7 @@ with row2_1:
         st.write(df['c'][x])
 
 with row2_2:
-    st.write("**First thing**")
+    st.write("**Scatterplot**")
     st.plotly_chart(fig1, use_container_width=True)
     
 with row2_3:
@@ -253,12 +253,12 @@ with row3_1:
     st.write(".")
 
 with row3_2:
-    st.write("**Third thing**")
+    st.write("**Bar Graph**")
     fig2.show()
     st.plotly_chart(fig2, use_container_width=True)
 
 with row3_3:
-    st.write("**Fourth thing**")
+    st.write("**Pie Chart**")
     fig3.show()
     st.plotly_chart(fig3, use_container_width=True)
 

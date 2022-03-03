@@ -30,12 +30,13 @@ with row1_1:
     st.image(image, caption='Google Form QR Code')
 
 with row1_2:
-    st.title("Live Poll PA")
+    st.title("Library Compliment Wall")
     st.write(
     """
     ##
     Fill out this survey to send compliments to your friends. 
     The compliments and additional data are visualized down below. 
+    If profanity is detected, your email will be sent to Tom Armstrong.
     """)
 
    

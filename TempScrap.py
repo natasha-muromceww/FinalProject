@@ -178,3 +178,35 @@
 # @st.cache(ttl=600)
 # date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 #  if date < df.loc[i, 'a'] 
+
+# # # import matplotlib.pyplot as plt
+# # # from wordcloud import WordCloud
+# # #my_list=["one", "one two", "three three three"]
+# st.set_option('deprecation.showPyplotGlobalUse', False)
+
+# adjective_list = df["d"].tolist()
+# #convert list to string and generate
+# unique_string=(" ").join(adjective_list)
+# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+# plt.figure(figsize=(15,8))
+# plt.imshow(wordcloud, interpolation='bilinear')
+# plt.imshow(wordcloud)
+
+# plt.axis("off")
+# #plt.savefig("your_file_name"+".png", bbox_inches='tight')
+# plt.show()
+# # #code test:
+# # # st.pyplot()
+
+# compliments = df['c'].toList()
+
+# length_list = []
+# sum = 0
+# for text in compliments:
+#     text = text.replace(" ", "")
+#     length_list.append(len(text))
+
+# for number in length_list:
+#     sum = sum + number 
+
+# avg = sum/len(length_list)

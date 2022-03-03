@@ -19,7 +19,7 @@ from shillelagh.backends.apsw.db import connect
 
 #url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 
-#Page setup-----------------------------------------------------------
+#Page setup-----------------------------------------------------------------------------------------------------------
 st.set_page_config(layout="wide")
 
 #Top section layout
@@ -40,7 +40,7 @@ with row1_2:
     """)
 
    
-#SHILLELAGH VERSION GRABBING DATA FROM SHEET -----------------------------------------------------
+#SHILLELAGH VERSION GRABBING DATA FROM SHEET ----------------------------------------------------------------------------
 connection = connect(":memory:")
 cursor = connection.cursor()
 
@@ -48,7 +48,7 @@ query = """
 SELECT * FROM "https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing"
 """
 
-#USING QUERY TO MAKE DF -----------------------------------------------------------
+#USING QUERY TO MAKE DF -------------------------------------------------------------------------------------------------
 data = []
 
 for row in cursor.execute(query): #row is probs tuple 
@@ -59,7 +59,7 @@ df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'sent?'
 # st.table(df)
 
 
-#SENDING COMPLIMENT FUNCTION-----------------------------------------------------------
+#SENDING COMPLIMENT FUNCTION-----------------------------------------------------------------------------------------------
 # using import smtplib, ssl
    
 def send_compliment(new_receiver_email, new_message):
@@ -78,7 +78,7 @@ def send_compliment(new_receiver_email, new_message):
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
 
-#FIRST VISUALIZATION-----------------------------------------------------------
+#FIRST VISUALIZATION-----------------------------------------------------------------------------------------------------------
 desire = df['f'].tolist()
 reception = df['g'].tolist()
 color_list = []
@@ -115,7 +115,7 @@ fig1.update_layout(
 #Test code:
 # st.plotly_chart(fig, use_container_width=True)
 
-#SECOND VISUALIZATION-------------
+#SECOND VISUALIZATION-------------------------------------------------------------------------------------------------------
 
 labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
 time_input = df['h'].tolist()
@@ -144,7 +144,7 @@ fig2.update_layout(
 #Test code:
 # fig2.show()
 
-#THIRD VISUALIZATION-----------------------------------------------------------
+#THIRD VISUALIZATION------------------------------------------------------------------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
 compliment_input = df['e'].tolist()
 count_list = [0]*9
@@ -185,7 +185,7 @@ fig3.update_layout(
 # #test code: 
 # fig3.show()
 
-#FOURTH VISUALIZATION
+#FOURTH VISUALIZATION------------------------------------------------------------------------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
 compliment_types_list = df['e'].tolist()
 compliment_list = df['c'].tolist()
@@ -206,7 +206,7 @@ for i in range(len(y_list)):
 
 fig4 = go.Figure(data=go.Scatter(x=compliment_categories, y=y_list, mode='markers'))
 
-#VISUALIZATION LAYOUT-----------------------------------------------------------
+#VISUALIZATION LAYOUT-----------------------------------------------------------------------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1, 1))
 
 with row2_1:
@@ -228,7 +228,7 @@ with row2_3:
         
 
  
-# #SENDING EMAILS-----------------------------------------------------------
+# #SENDING EMAILS-----------------------------------------------------------------------------------------------------------------------
 
   
     

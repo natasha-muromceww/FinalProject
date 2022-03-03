@@ -168,9 +168,9 @@ plt.show()
 # # counts = df['f'].tolist()
 # counts = [1, 2, 3, 4, 5, 6, 7]
 
-compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
+compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
 compliment_input = df['e'].tolist()
-count_list = [0]*7
+count_list = [0]*9
 
 
 for answer in compliment_input:
@@ -184,10 +184,14 @@ for answer in compliment_input:
         count_list[3] = count_list[3] + 1
     if answer == "Character":  
         count_list[4] = count_list[4] + 1 
-    if answer == "Creativity":
+    if answer == "Personality":
         count_list[5] = count_list[5] + 1
-    if answer == "Other":  
+    if answer == "Creativity":  
         count_list[6] = count_list[6] + 1 
+    if answer == "Beauty":  
+        count_list[7] = count_list[7] + 1
+    if answer == "Other":  
+        count_list[8] = count_list[8] + 1  
 
 fig2 = go.Figure([go.Bar(x = compliment_categories, y = count_list)])
 
@@ -205,6 +209,23 @@ fig2.update_layout(
 )
 # #test code: 
 # fig.show()
+
+#FOURTH VISUALIZATION
+labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
+time_length = [3, 4, 5, 6] #NEEDS TO COME FROM CHART VALUES
+
+# Use `hole` to create a donut-like pie chart
+fig3 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
+
+fig3.update_layout(
+    title='How Long Have You Known This Friend?',
+    paper_bgcolor='rgb(242, 236, 218)',
+    plot_bgcolor='rgb(232, 208, 137)',
+)
+
+
+# fig3.show()
+
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1,1))
@@ -238,4 +259,6 @@ with row3_2:
  
 with row3_3:
     st.write("**Fourth thing**")
+    fig3.show()
+
 

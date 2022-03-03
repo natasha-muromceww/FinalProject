@@ -36,7 +36,7 @@ with row1_2:
     ##
     Hi, welcome to the Library Compliment Wall! This is a data visualization of compliments students have sent to each other. 
     Use the QR code to fill out a survey to send compliments to your friends and answer additional survey questions to 
-    contribute to our compliment data.  
+    contribute to our compliment data. The compliments are sent to your junk folder so if you've sent one to a friend, let them know. 
     *If profanity is detected, your email will be sent to Tom Armstrong.
     Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle. 
     """)

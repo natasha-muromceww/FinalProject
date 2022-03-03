@@ -23,7 +23,7 @@ from shillelagh.backends.apsw.db import connect
 st.set_page_config(layout="wide")
 
 #Top section layout
-row1_1, row1_2 = st.columns((2,3))
+row1_1, row1_2, row1_3 = st.columns((2,3, 1))
 
 with row1_1:
     image = Image.open('DataVisForm.png')
@@ -40,7 +40,10 @@ with row1_2:
     *If profanity is detected, your email will be sent to Tom Armstrong.
     Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle. 
     """)
-
+with row1_3:
+    if st.button("Send Compliments"):
+      for x in df.index:
+        send_compliment(df['b'][x], df['c'][x])
    
 #SHILLELAGH VERSION GRABBING DATA FROM SHEET ----------------------------------------------------------------------------
 connection = connect(":memory:")
@@ -241,12 +244,7 @@ with row2_3:
     st.plotly_chart(fig4, use_container_width=True)
         
 
- 
-# #SENDING EMAILS-----------------------------------------------------------------------------------------------------------------------
 
-if st.button("Send Compliments"):
-    for x in df.index:
-        send_compliment(df['b'][x], df['c'][x])
 
     
     

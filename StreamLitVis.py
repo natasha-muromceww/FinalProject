@@ -224,7 +224,7 @@ with row2_3:
     st.write("**Pie Chart**")
     st.plotly_chart(fig2, use_container_width=True)
     st.write("**Scatterplot**")
-    st.plotly_chart(f4, use_container_width=True)
+    st.plotly_chart(fig4, use_container_width=True)
         
 
  

@@ -81,7 +81,7 @@ with row1_2:
     
     *If profanity is detected, your email will be sent to Tom Armstrong.
     
-    //Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle.//
+    **Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle.
     """)
     
 

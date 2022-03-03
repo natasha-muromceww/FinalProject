@@ -141,18 +141,18 @@ fig1.update_layout(
 # # #code test:
 # # # st.pyplot()
 
-compliments = df['c'].toList()
+# compliments = df['c'].toList()
 
-length_list = []
-sum = 0
-for text in compliments:
-    text = text.replace(" ", "")
-    length_list.append(len(text))
+# length_list = []
+# sum = 0
+# for text in compliments:
+#     text = text.replace(" ", "")
+#     length_list.append(len(text))
 
-for number in length_list:
-    sum = sum + number 
+# for number in length_list:
+#     sum = sum + number 
 
-avg = sum/len(length_list)
+# avg = sum/len(length_list)
 
 #THIRD VISUALIZATION-----------------------------------------------------------
 # compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
@@ -235,7 +235,7 @@ with row2_2:
     
 with row2_3:
     st.write("**Word Cloud**")
-    st.pyplot()
+#     st.pyplot()
 
     
 row3_1, row3_2, row3_3 = st.columns((1,1, 1))
@@ -260,7 +260,9 @@ with row3_3:
 #add column to datafram is yes or no 
 
 for x in df.index:
+    st.write("in loop")
     if df['sent?'][x] == 0:
+        st.write("in if")
         send_compliment(df['b'][x], df['c'][x])
         df['sent'][x] = 1 
 

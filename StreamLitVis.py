@@ -89,6 +89,7 @@ st.write(most_recent_hour)
 for x in df.index:
    st.write("in loop")
    if df['a'][x] > most_recent_hour:
+        st.write("in second part of loop")
         send_compliment(df['b'][x], df['c'][x])
 
      

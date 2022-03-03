@@ -34,9 +34,11 @@ with row1_2:
     st.write(
     """
     ##
-    Hi, welcome to the Library Compliment Wall! Scan the QR code to fill out a survey to send compliments to your friends.
-    Fill out the additional survey questions to contribute to our compliment data visualizations.  
+    Hi, welcome to the Library Compliment Wall! This is a data visualization of compliments students have sent to each other. 
+    Use the QR code to fill out a survey to send compliments to your friends and answer additional survey questions to 
+    contribute to our compliment data.  
     *If profanity is detected, your email will be sent to Tom Armstrong.
+    Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle. 
     """)
 
    

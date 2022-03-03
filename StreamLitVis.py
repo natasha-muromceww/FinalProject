@@ -34,9 +34,9 @@ with row1_2:
     st.write(
     """
     ##
-    Fill out this survey to send compliments to your friends. 
-    The compliments and additional data are visualized down below. 
-    If profanity is detected, your email will be sent to Tom Armstrong.
+    Hi, welcome to the Library Compliment Wall! Scan the QR code to fill out a survey to send compliments to your friends.
+    Fill out the additional survey questions to contribute to our compliment data visualizations.  
+    *If profanity is detected, your email will be sent to Tom Armstrong.
     """)
 
    
@@ -205,6 +205,18 @@ for i in range(len(y_list)):
     y_list[i] = average(compliment_categories[i])
 
 fig4 = go.Figure(data=go.Scatter(x=compliment_categories, y=y_list, mode='markers'))
+
+fig.update_layout(
+    title='Average Character Length of Each Compliment by Category',
+    xaxis=dict(
+        title='Compliment Types',
+    ),
+    yaxis=dict(
+        title='Average Length',
+    ),
+    paper_bgcolor='rgb(242, 236, 218)',
+    plot_bgcolor='rgb(232, 208, 137)',
+)
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------------------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1, 1))

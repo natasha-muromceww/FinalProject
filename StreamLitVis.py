@@ -19,31 +19,6 @@ from shillelagh.backends.apsw.db import connect
 
 #url: https://docs.google.com/spreadsheets/d/17bNU8T92Bu1OxNNvFMhVlkPtXw56hVSJlyXQhYxUwOw/edit?usp=sharing
 
-#Page setup-----------------------------------------------------------------------------------------------------------
-st.set_page_config(layout="wide")
-
-#Top section layout
-row1_1, row1_2, row1_3 = st.columns((2,3, 1))
-
-with row1_1:
-    image = Image.open('DataVisForm.png')
-    st.image(image, caption='Google Form QR Code')
-
-with row1_2:
-    st.title("Library Compliment Wall")
-    st.write(
-    """
-    ##
-    Hi, welcome to the Library Compliment Wall! This is a data visualization of compliments students have sent to each other. 
-    Use the QR code to fill out a survey to send compliments to your friends and answer additional survey questions to 
-    contribute to our compliment data. The compliments are sent to your junk folder so if you've sent one to a friend, let them know. 
-    *If profanity is detected, your email will be sent to Tom Armstrong.
-    Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle. 
-    """)
-with row1_3:
-    if st.button("Send Compliments"):
-      for x in df.index:
-        send_compliment(df['b'][x], df['c'][x])
    
 #SHILLELAGH VERSION GRABBING DATA FROM SHEET ----------------------------------------------------------------------------
 connection = connect(":memory:")
@@ -82,6 +57,31 @@ def send_compliment(new_receiver_email, new_message):
 #code check:
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
+#Page setup-----------------------------------------------------------------------------------------------------------
+st.set_page_config(layout="wide")
+
+#Top section layout
+row1_1, row1_2 = st.columns((2,3))
+
+with row1_1:
+    image = Image.open('DataVisForm.png')
+    st.image(image, caption='Google Form QR Code')
+    if st.button("Send Compliments"):
+      for x in df.index:
+        send_compliment(df['b'][x], df['c'][x])
+
+with row1_2:
+    st.title("Library Compliment Wall")
+    st.write(
+    """
+    ##
+    Hi, welcome to the Library Compliment Wall! This is a data visualization of compliments students have sent to each other. 
+    Use the QR code to fill out a survey to send compliments to your friends and answer additional survey questions to 
+    contribute to our compliment data. The compliments are sent to your junk folder so if you've sent one to a friend, let them know. 
+    *If profanity is detected, your email will be sent to Tom Armstrong.
+    Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle. 
+    """)
+    
 
 #FIRST VISUALIZATION-----------------------------------------------------------------------------------------------------------
 desire = df['e'].tolist()

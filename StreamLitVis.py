@@ -206,7 +206,7 @@ for i in range(len(y_list)):
 
 fig4 = go.Figure(data=go.Scatter(x=compliment_categories, y=y_list, mode='markers'))
 
-fig.update_layout(
+fig4.update_layout(
     title='Average Character Length of Each Compliment by Category',
     xaxis=dict(
         title='Compliment Types',

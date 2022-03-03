@@ -66,9 +66,9 @@ row1_1, row1_2 = st.columns((2,3))
 with row1_1:
     image = Image.open('DataVisForm.png')
     st.image(image, caption='Google Form QR Code')
-    if st.button("Send Compliments"):
-      for x in df.index:
-        send_compliment(df['b'][x], df['c'][x])
+#     if st.button("Send Compliments"):
+#       for x in df.index:
+#         send_compliment(df['b'][x], df['c'][x])
 
 with row1_2:
     st.title("Library Compliment Wall")

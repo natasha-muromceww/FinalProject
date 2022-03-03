@@ -249,28 +249,34 @@ fig3.update_layout(
 # #     st.plotly_chart(fig4, use_container_width=True)
 
 #VISUALIZATION LAYOUT 2-----------------------------------------------------------
-row2_1, row2_2 = st.columns((1, 1))
+row2_1, row2_2, row2_3 = st.columns((1, 1, 1))
 
 # st.write("**View Recent Compliments**")  
-
 
 with row2_1:
     st.write("**Scatterplot**")
     st.plotly_chart(fig1, use_container_width=True)
+    st.write("**Bar Graph**")
+    st.plotly_chart(fig3, use_container_width=True)
 
 with row2_2:
     st.write("**Pie Chart**")
     st.plotly_chart(fig2, use_container_width=True)
-          
-row3_1, row3_2 = st.columns((1,1))
-
-with row3_1:
-    st.write("**Bar Graph**")
-    st.plotly_chart(fig3, use_container_width=True)
-
-add_sidebar = st.sidebar.text(
+#     st.empty()
+    
+with row2_3:
     for x in df.index:
         st.write(df['c'][x]))
+          
+# row3_1, row3_2 = st.columns((1,1))
+
+# with row3_1:
+#     st.write("**Bar Graph**")
+#     st.plotly_chart(fig3, use_container_width=True)
+
+# add_sidebar = st.sidebar.text(
+#     for x in df.index:
+#         st.write(df['c'][x]))
 
  
 # #SENDING EMAILS-----------------------------------------------------------

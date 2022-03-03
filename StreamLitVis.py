@@ -259,12 +259,12 @@ with row3_3:
 
 #add column to datafram is yes or no 
 
-for x in df.index:
-    st.write("in loop")
-    if df['sent?'][x] == 0:
-        st.write("in if")
-        send_compliment(df['b'][x], df['c'][x])
-        df['sent?'][x] = df['sent?'][x] + 1
+# for x in df.index:
+#     st.write("in loop")
+#     if df['sent?'][x] == 0:
+#         st.write("in if")
+#         send_compliment(df['b'][x], df['c'][x])
+#         df['sent?'][x] = df['sent?'][x] + 1
 
 
 # # Uses st.cache to only rerun when the query changes or after 10 min.

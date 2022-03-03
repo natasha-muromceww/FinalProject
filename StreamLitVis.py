@@ -246,6 +246,6 @@ with row2_3:
     st.plotly_chart(fig4, use_container_width=True)
         
 
-for x in df.index:
-   send_compliment(df['b'][x], df['c'][x])
+# for x in df.index:
+#    send_compliment(df['b'][x], df['c'][x])
 

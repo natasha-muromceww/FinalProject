@@ -54,7 +54,7 @@ data = []
 for row in cursor.execute(query): #row is probs tuple 
    data.append(row)
 
-df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'sent?'])
 #code check:
 # st.table(df)
 
@@ -122,24 +122,37 @@ fig1.update_layout(
 # st.plotly_chart(fig, use_container_width=True)
 
 # #WORD CLOUD/SECOND VISUALIZATION-------------
-# # import matplotlib.pyplot as plt
-# # from wordcloud import WordCloud
-# #my_list=["one", "one two", "three three three"]
-st.set_option('deprecation.showPyplotGlobalUse', False)
+# # # import matplotlib.pyplot as plt
+# # # from wordcloud import WordCloud
+# # #my_list=["one", "one two", "three three three"]
+# st.set_option('deprecation.showPyplotGlobalUse', False)
 
-adjective_list = df["d"].tolist()
-#convert list to string and generate
-unique_string=(" ").join(adjective_list)
-wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
-plt.figure(figsize=(15,8))
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.imshow(wordcloud)
+# adjective_list = df["d"].tolist()
+# #convert list to string and generate
+# unique_string=(" ").join(adjective_list)
+# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+# plt.figure(figsize=(15,8))
+# plt.imshow(wordcloud, interpolation='bilinear')
+# plt.imshow(wordcloud)
 
-plt.axis("off")
-#plt.savefig("your_file_name"+".png", bbox_inches='tight')
-plt.show()
-# #code test:
-# # st.pyplot()
+# plt.axis("off")
+# #plt.savefig("your_file_name"+".png", bbox_inches='tight')
+# plt.show()
+# # #code test:
+# # # st.pyplot()
+
+compliments = df['c'].toList()
+
+length_list = []
+sum = 0
+for text in compliments:
+    text = text.replace(" ", "")
+    length_list.append(len(text))
+
+for number in length_list:
+    sum = sum + number 
+
+avg = sum/len(length_list)
 
 #THIRD VISUALIZATION-----------------------------------------------------------
 # compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
@@ -242,6 +255,16 @@ with row3_3:
 
  
 # #SENDING EMAILS-----------------------------------------------------------
+
+
+#add column to datafram is yes or no 
+
+for x in df.index:
+    if df['sent?'][x] == 0:
+        send_compliment(df['b'][x], df['c'][x])
+        df['sent'][x] = 1 
+
+
 # # Uses st.cache to only rerun when the query changes or after 10 min.
 
 # the_datetime = datetime.now()
@@ -258,11 +281,11 @@ with row3_3:
 #         send_compliment(email, compliment)
 #         st.write("sent!")
         
-@st.cache
-def send_compliment2(length1):
-    send_compliment(df['b'][length1], df['c'][length1]
+# @st.cache
+# def send_compliment2(length1):
+#     send_compliment(df['b'][length1], df['c'][length1]
                    
-send_compliment2(len(df)-1)
+# send_compliment2(len(df)-1)
     
 # the_datetime = datetime.now()
 # most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)

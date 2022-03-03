@@ -251,8 +251,6 @@ fig3.update_layout(
 #VISUALIZATION LAYOUT 2-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1, 1))
 
-# st.write("**View Recent Compliments**")  
-
 with row2_1:
     st.write("**Scatterplot**")
     st.plotly_chart(fig1, use_container_width=True)
@@ -265,8 +263,9 @@ with row2_2:
 #     st.empty()
     
 with row2_3:
+    st.write("**View Recent Compliments**")  
     for x in df.index:
-        st.write(df['c'][x]))
+        st.write(df['c'][x])
           
 # row3_1, row3_2 = st.columns((1,1))
 

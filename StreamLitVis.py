@@ -108,8 +108,8 @@ fig1.update_layout(
     yaxis=dict(
         title='Reception of Compliments',
     ),
-    paper_bgcolor='rgb(243, 243, 243)',
-    plot_bgcolor='rgb(243, 243, 243)',
+    paper_bgcolor='rgb(242, 236, 218)',
+    plot_bgcolor='rgb(232, 208, 137)',
 )
 
 #Test code:

@@ -264,7 +264,7 @@ for x in df.index:
     if df['sent?'][x] == 0:
         st.write("in if")
         send_compliment(df['b'][x], df['c'][x])
-        df['sent'][x] = 1 
+        df.loc['sent'][x] = 1
 
 
 # # Uses st.cache to only rerun when the query changes or after 10 min.

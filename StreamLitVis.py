@@ -251,15 +251,18 @@ with row3_3:
 #     if df['a'][x] > most_recent_hour: 
 #     send_compliment(df['b'][x], df['c'][x])
     
-if st.button("send compliment"):
-    email = st.text_input("recipient email")
-    compliment = st.text_input("Compliment:")
-    if st.button("send"):
-        send_compliment(email, compliment)
-        st.write("sent!")
+# if st.button("send compliment"):
+#     email = st.text_input("recipient email")
+#     compliment = st.text_input("Compliment:")
+#     if st.button("send"):
+#         send_compliment(email, compliment)
+#         st.write("sent!")
         
-# @st.cache
-# def send_compliment2(
+@st.cache
+def send_compliment2(length1):
+    send_compliment(df['b'][length1], df['c'][length1]
+                   
+send_compliment2(len(df)-1)
     
 # the_datetime = datetime.now()
 # most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)

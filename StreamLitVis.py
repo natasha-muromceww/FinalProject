@@ -77,30 +77,7 @@ def send_compliment(new_receiver_email, new_message):
 #code check:
 # send_compliment('nmuromcew22@andover.edu', 'email check')
 
-# #SENDING EMAILS-----------------------------------------------------------
-# # Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
-the_datetime = datetime.now()
-most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)
 
-st.write(the_datetime)
-st.write(most_recent_hour)
-
-for x in df.index:
-   st.write("in loop")
-   if df['a'][x] > most_recent_hour:
-        st.write("in second part of loop")
-        send_compliment(df['b'][x], df['c'][x])
-
-     
-
-#THIS WORKS FOR SENDING COMPLIMENTS IN A LOOP AND ACESSIGN PARTS IN A LOOP 
-# for x in df.index:
-#    st.write("hi1")
-#    send_compliment(df['b'][x], df['c'][x])
-#    st.write("hi")
-
-                   
 #FIRST VISUALIZATION-----------------------------------------------------------
 # import plotly.graph_objects as go
 # import streamlit as st 
@@ -263,5 +240,34 @@ with row3_3:
     fig3.show()
     st.plotly_chart(fig3, use_container_width=True)
 
+ 
+# #SENDING EMAILS-----------------------------------------------------------
+# # Uses st.cache to only rerun when the query changes or after 10 min.
+
+@st.cache(ttl=600)
+the_datetime = datetime.now()
+most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)
+
+st.write(the_datetime)
+st.write(most_recent_hour)
+
+# for x in df.index:
+#    st.write("in loop")
+#    if df['a'][x] > most_recent_hour:
+#         st.write("in second part of loop")
+#         send_compliment(df['b'][x], df['c'][x])
+
+     
+
+#THIS WORKS FOR SENDING COMPLIMENTS IN A LOOP AND ACESSIGN PARTS IN A LOOP 
+# for x in df.index:
+#    st.write("hi1")
+#    send_compliment(df['b'][x], df['c'][x])
+#    st.write("hi")
+
+  
+    
+    
+    
 
 

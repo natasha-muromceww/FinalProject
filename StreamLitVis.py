@@ -80,7 +80,8 @@ with row1_2:
     contribute to our compliment data. The compliments are sent to your junk folder so if you've sent one to a friend, let them know. 
     
     *If profanity is detected, your email will be sent to Tom Armstrong.
-    /Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle./ 
+    
+    //Project created by Natasha Muromcew, Chenault Ellis, and Claire de Saint Phalle.//
     """)
     
 

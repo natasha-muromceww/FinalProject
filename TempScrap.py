@@ -210,3 +210,58 @@
 #     sum = sum + number 
 
 # avg = sum/len(length_list)
+
+
+
+#add column to datafram is yes or no 
+
+# for x in df.index:
+#     st.write("in loop")
+#     if df['sent?'][x] == 0:
+#         st.write("in if")
+#         send_compliment(df['b'][x], df['c'][x])
+#         df['sent?'][x] = df['sent?'][x] + 1
+
+
+# # Uses st.cache to only rerun when the query changes or after 10 min.
+
+# the_datetime = datetime.now()
+# most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)
+
+# def send_new_emails():
+#     if df['a'][x] > most_recent_hour: 
+#     send_compliment(df['b'][x], df['c'][x])
+    
+# if st.button("send compliment"):
+#     email = st.text_input("recipient email")
+#     compliment = st.text_input("Compliment:")
+#     if st.button("send"):
+#         send_compliment(email, compliment)
+#         st.write("sent!")
+        
+# @st.cache
+# def send_compliment2(length1):
+#     send_compliment(df['b'][length1], df['c'][length1]
+                   
+# send_compliment2(len(df)-1)
+    
+# the_datetime = datetime.now()
+# most_recent_hour = datetime(the_datetime.year, the_datetime.month, the_datetime.day, the_datetime.hour, 0, the_datetime.second, the_datetime.microsecond)
+
+# st.write(the_datetime)
+# st.write(most_recent_hour)
+
+# for x in df.index:
+#    st.write("in loop")
+#    if df['a'][x] > most_recent_hour:
+#         st.write("in second part of loop")
+#         send_compliment(df['b'][x], df['c'][x])
+
+     
+
+#THIS WORKS FOR SENDING COMPLIMENTS IN A LOOP AND ACESSIGN PARTS IN A LOOP 
+# for x in df.index:
+#    st.write("hi1")
+#    send_compliment(df['b'][x], df['c'][x])
+#    st.write("hi")
+

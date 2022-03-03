@@ -122,37 +122,33 @@ fig1.update_layout(
 # st.plotly_chart(fig, use_container_width=True)
 
 # #WORD CLOUD/SECOND VISUALIZATION-------------
-# # # import matplotlib.pyplot as plt
-# # # from wordcloud import WordCloud
-# # #my_list=["one", "one two", "three three three"]
-# st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# adjective_list = df["d"].tolist()
-# #convert list to string and generate
-# unique_string=(" ").join(adjective_list)
-# wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
-# plt.figure(figsize=(15,8))
-# plt.imshow(wordcloud, interpolation='bilinear')
-# plt.imshow(wordcloud)
+labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
+time_input = df['h'].tolist()
+count_list = [0] * 5
 
-# plt.axis("off")
-# #plt.savefig("your_file_name"+".png", bbox_inches='tight')
-# plt.show()
-# # #code test:
-# # # st.pyplot()
+for answer in time_input:
+    if answer == "<1 years":  
+        count_list[0] = count_list[0] + 1 
+    if answer == "1 - 2 years":
+        count_list[1] = count_list[1] + 1 
+    if answer == "2 - 3 years":  
+        count_list[2] = count_list[2] + 1 
+    if answer == "3 - 4 years":
+        count_list[3] = count_list[3] + 1
+    if answer == "4+ years":
+        count_list[4] = count_list[4] + 1
 
-# compliments = df['c'].toList()
+fig2 = go.Figure(data=[go.Pie(labels=labels, values=count_list, hole=.3)])
 
-# length_list = []
-# sum = 0
-# for text in compliments:
-#     text = text.replace(" ", "")
-#     length_list.append(len(text))
+fig2.update_layout(
+    title='How Long Have You Known This Friend?',
+    paper_bgcolor='rgb(242, 236, 218)',
+    plot_bgcolor='rgb(232, 208, 137)',
+)
 
-# for number in length_list:
-#     sum = sum + number 
-
-# avg = sum/len(length_list)
+#Test code:
+# fig2.show()
 
 #THIRD VISUALIZATION-----------------------------------------------------------
 # compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
@@ -162,7 +158,6 @@ fig1.update_layout(
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
 compliment_input = df['e'].tolist()
 count_list = [0]*9
-
 
 for answer in compliment_input:
     if answer == "Humor":  
@@ -184,10 +179,9 @@ for answer in compliment_input:
     if answer == "Other":  
         count_list[8] = count_list[8] + 1  
 
-fig2 = go.Figure([go.Bar(x = compliment_categories, y = count_list)])
+fig3 = go.Figure([go.Bar(x = compliment_categories, y = count_list)])
 
-
-fig2.update_layout(
+fig3.update_layout(
     title='Compliments by Category',
     xaxis=dict(
         title='Compliment Types',
@@ -199,23 +193,23 @@ fig2.update_layout(
     plot_bgcolor='rgb(232, 208, 137)',
 )
 # #test code: 
-# fig.show()
+# fig3.show()
 
 #FOURTH VISUALIZATION
 labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
 time_length = [3, 4, 5, 6] #NEEDS TO COME FROM CHART VALUES
 
 # Use `hole` to create a donut-like pie chart
-fig3 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
+fig4 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
 
-fig3.update_layout(
+fig4.update_layout(
     title='How Long Have You Known This Friend?',
     paper_bgcolor='rgb(242, 236, 218)',
     plot_bgcolor='rgb(232, 208, 137)',
 )
 
-
-# fig3.show()
+#Test code:
+# fig4.show()
 
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
@@ -235,7 +229,8 @@ with row2_2:
     
 with row2_3:
     st.write("**Word Cloud**")
-#     st.pyplot()
+#     fig2.show()
+    st.plotly_chart(fig2, use_container_width=True)
 
     
 row3_1, row3_2, row3_3 = st.columns((1,1, 1))
@@ -245,13 +240,13 @@ with row3_1:
 
 with row3_2:
     st.write("**Bar Graph**")
-    fig2.show()
-    st.plotly_chart(fig2, use_container_width=True)
+#     fig3.show()
+    st.plotly_chart(fig3, use_container_width=True)
 
 with row3_3:
     st.write("**Pie Chart**")
-    fig3.show()
-    st.plotly_chart(fig3, use_container_width=True)
+#     fig4.show()
+    st.plotly_chart(fig4, use_container_width=True)
 
  
 # #SENDING EMAILS-----------------------------------------------------------

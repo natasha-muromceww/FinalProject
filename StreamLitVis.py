@@ -79,12 +79,6 @@ def send_compliment(new_receiver_email, new_message):
 
 
 #FIRST VISUALIZATION-----------------------------------------------------------
-# import plotly.graph_objects as go
-# import streamlit as st 
-# import numpy as np
-# compliment_list = df["b"].tolist()
-
-
 desire = df['f'].tolist()
 reception = df['g'].tolist()
 color_list = []
@@ -121,7 +115,7 @@ fig1.update_layout(
 #Test code:
 # st.plotly_chart(fig, use_container_width=True)
 
-# #WORD CLOUD/SECOND VISUALIZATION-------------
+#SECOND VISUALIZATION-------------
 
 labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
 time_input = df['h'].tolist()
@@ -151,10 +145,6 @@ fig2.update_layout(
 # fig2.show()
 
 #THIRD VISUALIZATION-----------------------------------------------------------
-# compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Creativity", "Other"]
-# # counts = df['f'].tolist()
-# counts = [1, 2, 3, 4, 5, 6, 7]
-
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
 compliment_input = df['e'].tolist()
 count_list = [0]*9
@@ -196,21 +186,25 @@ fig3.update_layout(
 # fig3.show()
 
 #FOURTH VISUALIZATION
-# labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
-# time_length = [3, 4, 5, 6] #NEEDS TO COME FROM CHART VALUES
+compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
+compliment_types_list = df['e'].tolist()
+compliment_list = df['c'].tolist()
 
-# # Use `hole` to create a donut-like pie chart
-# fig4 = go.Figure(data=[go.Pie(labels=labels, values=time_length, hole=.3)])
+def average(category): #input the category.
+    sum = 0
+    count = 0
+    for i in range(len(compliment_list)):  
+        if compliment_types_list[i] == category:
+            text = compliment_list[i].replace(" ", "")
+            sum = len(text) + sum 
+            count = count + 1
+    return sum/count 
 
-# fig4.update_layout(
-#     title='How Long Have You Known This Friend?',
-#     paper_bgcolor='rgb(242, 236, 218)',
-#     plot_bgcolor='rgb(232, 208, 137)',
-# )
+y_list = [0] * 9
+for i in range(len(y_list)):
+    y_list[i] = average(compliment_categories[i])
 
-# #Test code:
-# # fig4.show()
-
+fig4 = go.Figure(data=go.Scatter(x=compliment_categories, y=y_list, mode='markers'))
 
 #VISUALIZATION LAYOUT-----------------------------------------------------------
 row2_1, row2_2, row2_3 = st.columns((1, 1, 1))
@@ -229,6 +223,8 @@ with row2_2:
 with row2_3:
     st.write("**Pie Chart**")
     st.plotly_chart(fig2, use_container_width=True)
+    st.write("**Scatterplot**")
+    st.plotly_chart(f4, use_container_width=True)
         
 
  

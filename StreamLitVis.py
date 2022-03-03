@@ -244,7 +244,10 @@ with row2_3:
  
 # #SENDING EMAILS-----------------------------------------------------------------------------------------------------------------------
 
-  
+if st.button("Send Compliments"):
+    for x in df.index:
+        send_compliment(df['b'][x], df['c'][x])
+
     
     
     

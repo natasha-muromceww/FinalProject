@@ -246,6 +246,7 @@ with row2_3:
     st.write("**Word Cloud**")
     st.pyplot()
 
+    
 row3_1, row3_2, row3_3 = st.columns((1,1, 1))
 
 with row3_1:
@@ -256,7 +257,6 @@ with row3_2:
     fig2.show()
     st.plotly_chart(fig2, use_container_width=True)
 
- 
 with row3_3:
     st.write("**Fourth thing**")
     fig3.show()

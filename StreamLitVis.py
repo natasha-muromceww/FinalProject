@@ -54,7 +54,7 @@ data = []
 for row in cursor.execute(query): #row is probs tuple 
    data.append(row)
 
-df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'sent?'])
+df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'email address', 'sent?'])
 #code check:
 # st.table(df)
 

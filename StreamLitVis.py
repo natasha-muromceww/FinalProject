@@ -260,5 +260,7 @@ with row3_2:
 with row3_3:
     st.write("**Fourth thing**")
     fig3.show()
+    st.plotly_chart(fig3, use_container_width=True)
+
 
 

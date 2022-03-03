@@ -54,7 +54,7 @@ data = []
 for row in cursor.execute(query): #row is probs tuple 
    data.append(row)
 
-df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'sent?'])
+df = pd.DataFrame(data, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'sent?'])
 #code check:
 # st.table(df)
 
@@ -79,8 +79,8 @@ def send_compliment(new_receiver_email, new_message):
 
 
 #FIRST VISUALIZATION-----------------------------------------------------------------------------------------------------------
-desire = df['f'].tolist()
-reception = df['g'].tolist()
+desire = df['e'].tolist()
+reception = df['f'].tolist()
 color_list = []
 size_list = []
 text_list = []
@@ -118,7 +118,7 @@ fig1.update_layout(
 #SECOND VISUALIZATION-------------------------------------------------------------------------------------------------------
 
 labels = ['<1 years','1 - 2 years','2 - 3 years','3 - 4 years', '4+ years']
-time_input = df['h'].tolist()
+time_input = df['g'].tolist()
 count_list = [0] * 5
 
 for answer in time_input:
@@ -146,7 +146,7 @@ fig2.update_layout(
 
 #THIRD VISUALIZATION------------------------------------------------------------------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
-compliment_input = df['e'].tolist()
+compliment_input = df['d'].tolist()
 count_list = [0]*9
 
 for answer in compliment_input:
@@ -187,7 +187,7 @@ fig3.update_layout(
 
 #FOURTH VISUALIZATION------------------------------------------------------------------------------------------------------------------------
 compliment_categories = ["Humor", "Intelligence", "Athleticism", "Fashion", "Character", "Personality", "Creativity", "Beauty", "Other"]
-compliment_types_list = df['e'].tolist()
+compliment_types_list = df['d'].tolist()
 compliment_list = df['c'].tolist()
 
 def average(category): #input the category.
